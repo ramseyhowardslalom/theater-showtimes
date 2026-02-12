@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Cinemagic Theater Contract",
+    "description": "Data contract for Cinemagic Theater entity to be added to theaters.json",
+    "type": "object",
+    "required": [
+        "id",
+        "name",
+        "address",
+        "website"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "const": "cinemagic-theater",
+            "description": "Unique identifier for Cinemagic Theater"
+        },
+        "name": {
+            "type": "string",
+            "const": "Cinemagic Theater",
+            "description": "Display name of the theater"
+        },
+        "address": {
+            "type": "string",
+            "const": "2021 SE Hawthorne Blvd, Portland, OR 97214",
+            "description": "Full street address"
+        },
+        "website": {
+            "type": "string",
+            "format": "uri",
+            "const": "https://www.thecinemagictheater.com",
+            "description": "Main website URL"
+        },
+        "city": {
+            "type": "string",
+            "description": "City name (optional)"
+        },
+        "zip": {
+            "type": "string",
+            "description": "ZIP code (optional)"
+        },
+        "phone": {
+            "type": "string",
+            "description": "Contact phone number (optional)"
+        }
+    },
+    "additionalProperties": false,
+    "examples": [
+        {
+            "id": "cinemagic-theater",
+            "name": "Cinemagic Theater",
+            "address": "2021 SE Hawthorne Blvd, Portland, OR 97214",
+            "website": "https://www.thecinemagictheater.com"
+        }
+    ]
+}
