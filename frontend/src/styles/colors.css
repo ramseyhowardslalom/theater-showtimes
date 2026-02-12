@@ -1,0 +1,35 @@
+:root {
+    /* Primary Neon Colors */
+    --neon-blue: #00D9FF;
+    --neon-blue-dark: #0099FF;
+    --neon-pink: #FF1493;
+    --neon-pink-light: #FF69B4;
+    --neon-orange: #FF6B35;
+    --neon-orange-light: #FFA500;
+    --neon-red: #FF073A;
+    --neon-red-light: #FF4444;
+
+    /* Background Colors */
+    --bg-navy: #0A0E27;
+    --bg-dark: #1A1A2E;
+    --bg-dark-purple: #16213E;
+    --bg-deep-purple: #2E1A47;
+
+    /* Accent Colors */
+    --neon-yellow: #FFD700;
+    --neon-yellow-light: #FFF44F;
+    --neon-green: #39FF14;
+    --neon-green-light: #00FF41;
+    --neon-purple: #B026FF;
+    --neon-purple-light: #DA70D6;
+    --white: #FFFFFF;
+    --light-gray: #F0F0F0;
+
+    /* Neon Glow Effects */
+    --neon-glow-blue: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    --neon-glow-pink: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
+    --neon-glow-orange: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange);
+    --neon-glow-yellow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow);
+    --neon-glow-red: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
+    --neon-glow-purple: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple), 0 0 30px var(--neon-purple);
+}

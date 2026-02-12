@@ -1,0 +1,61 @@
+.theater-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.theater-item {
+    background: var(--bg-dark-purple);
+    border: 2px solid var(--neon-orange);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--neon-glow-orange);
+    transition: all 0.3s ease;
+}
+
+.theater-item:hover {
+    border-color: var(--neon-pink);
+    box-shadow: var(--neon-glow-pink);
+    transform: translateX(10px);
+}
+
+.theater-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--neon-pink);
+    text-shadow: var(--neon-glow-pink);
+    margin: 0 0 0.5rem 0;
+}
+
+.theater-address {
+    color: var(--neon-yellow);
+    margin: 0;
+}
+
+.theater-showtimes {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theater-showtimes p {
+    color: var(--white);
+    margin: 0;
+}
+
+.no-showtimes {
+    color: var(--neon-red) !important;
+}
+
+.view-link {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.view-link:hover {
+    color: var(--neon-orange);
+    text-shadow: var(--neon-glow-orange);
+}

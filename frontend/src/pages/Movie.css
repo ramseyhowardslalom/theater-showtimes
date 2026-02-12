@@ -1,0 +1,55 @@
+.movie-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-header {
+    display: flex;
+    gap: 2rem;
+    background: var(--bg-dark-purple);
+    border: 2px solid var(--neon-pink);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--neon-glow-pink);
+}
+
+.movie-header img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--neon-blue);
+    box-shadow: var(--neon-glow-blue);
+}
+
+.movie-info h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: var(--neon-glow-pink);
+    margin-bottom: 1rem;
+}
+
+.movie-info .overview {
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 2rem;
+    color: var(--neon-yellow);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .movie-header {
+        flex-direction: column;
+    }
+
+    .movie-header img {
+        width: 100%;
+        max-width: 300px;
+    }
+}

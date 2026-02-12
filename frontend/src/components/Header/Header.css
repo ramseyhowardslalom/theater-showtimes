@@ -1,0 +1,69 @@
+.header {
+    background: var(--bg-navy);
+    border-bottom: 3px solid var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple);
+    padding: 1.5rem 0;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.neon-text {
+    color: var(--neon-orange);
+    text-shadow: 0 0 5px var(--neon-orange);
+}
+
+.neon-text-alt {
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--neon-yellow);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: var(--neon-glow-yellow);
+}
+
+.nav-link:hover {
+    color: var(--neon-orange);
+    text-shadow: var(--neon-glow-orange);
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}

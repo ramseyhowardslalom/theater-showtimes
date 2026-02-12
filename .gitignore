@@ -1,0 +1,28 @@
+# Root-level gitignore for the entire project
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files (keep templates, ignore actual secrets)
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Documentation builds (if using tools like mkdocs)
+site/

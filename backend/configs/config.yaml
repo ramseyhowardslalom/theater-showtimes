@@ -1,0 +1,27 @@
+scraper:
+  timeout: 30s
+  rate_limit: 2s
+  
+tmdb:
+  mcp_server_url: http://localhost:3001
+  cache_ttl: 168h # 7 days
+  
+api:
+  port: 8080
+  cors_origins: 
+    - "http://localhost:3000"
+  
+storage:
+  type: json
+  path: ./data
+
+theaters:
+  - id: example-theater
+    name: "Example Theater"
+    url: "https://example-theater.com"
+    scraper: example_theater
+    
+  - id: local-cinema
+    name: "Local Cinema"
+    url: "https://local-cinema.com"
+    scraper: local_cinema

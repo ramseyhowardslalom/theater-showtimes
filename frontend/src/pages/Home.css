@@ -1,0 +1,39 @@
+.home {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.error-state {
+    text-align: center;
+    padding: 3rem;
+    background: var(--bg-dark);
+    border: 2px solid var(--neon-red);
+    border-radius: 8px;
+    color: var(--neon-red);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .home {
+        padding: 1rem;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
