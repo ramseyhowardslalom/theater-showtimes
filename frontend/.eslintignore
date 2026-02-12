@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Temporary files
+*.tmp
+
+# Vite
+.vite/
+
+# Config files that don't need linting
+vite.config.js
+vitest.config.js

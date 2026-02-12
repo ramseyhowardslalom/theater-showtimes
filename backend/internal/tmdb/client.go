@@ -378,8 +378,11 @@ func (c *Client) EnrichShowtimes(showtimes []models.Showtime) ([]models.Showtime
 		// Search for the movie
 		movie, err := c.SearchMovie(showtime.MovieTitle)
 		if err != nil {
+			// Create placeholder movie with limited_info flag (T014)
 			fmt.Printf("Failed to find TMDB data for '%s': %v\n", showtime.MovieTitle, err)
-			movieCache[showtime.MovieTitle] = nil
+			placeholderMovie := c.createPlaceholderMovie(showtime.MovieTitle)
+			movieCache[showtime.MovieTitle] = placeholderMovie
+			showtime.TMDBID = 0 // Placeholder movies have TMDB ID 0
 			enriched = append(enriched, showtime)
 			continue
 		}
@@ -391,5 +394,22 @@ func (c *Client) EnrichShowtimes(showtimes []models.Showtime) ([]models.Showtime
 	}
 
 	return enriched, movieCache
+}
+
+// createPlaceholderMovie creates a minimal movie record for TMDB match failures
+// This implements the limited_info flag requirement from data-model.md
+func (c *Client) createPlaceholderMovie(title string) *models.Movie {
+	return &models.Movie{
+		TMDBID:       0,
+		Title:        title,
+		Overview:     "",
+		Runtime:      0,
+		Rating:       "NR",
+		Genres:       []string{},
+		PosterPath:   "/assets/placeholder-poster.png",
+		TMDBRating:   0,
+		VoteCount:    0,
+		LimitedInfo:  true, // Flag for frontend badge display
+	}
 }
 

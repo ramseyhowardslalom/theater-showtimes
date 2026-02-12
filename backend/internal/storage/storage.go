@@ -69,6 +69,33 @@ func (s *Storage) LoadShowtimes() ([]models.Showtime, error) {
 	return showtimes, err
 }
 
+// ReplaceTheaterShowtimes replaces all showtimes for a specific theater
+// This implements the full refresh strategy: removes old data for the theater
+// and adds new scraped data
+func (s *Storage) ReplaceTheaterShowtimes(theaterID string, newShowtimes []models.Showtime) error {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+
+	// Load existing showtimes
+	path := filepath.Join(s.dataPath, "showtimes.json")
+	var existingShowtimes []models.Showtime
+	_ = s.readJSON(path, &existingShowtimes)
+
+	// Filter out showtimes for this theater
+	var filteredShowtimes []models.Showtime
+	for _, showtime := range existingShowtimes {
+		if showtime.TheaterID != theaterID {
+			filteredShowtimes = append(filteredShowtimes, showtime)
+		}
+	}
+
+	// Append new showtimes for this theater
+	filteredShowtimes = append(filteredShowtimes, newShowtimes...)
+
+	// Save updated showtimes
+	return s.writeJSON(path, filteredShowtimes)
+}
+
 // SaveMovies saves movies to JSON
 func (s *Storage) SaveMovies(movies []models.Movie) error {
 	s.mu.Lock()

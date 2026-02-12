@@ -10,6 +10,7 @@ import (
 
 	"theater-showtimes/internal/models"
 	"theater-showtimes/internal/scrapers"
+	"theater-showtimes/internal/scrapers/cinemagic_theater"
 	"theater-showtimes/internal/scrapers/clinton_street_theater"
 	"theater-showtimes/internal/scrapers/example_theater"
 	"theater-showtimes/internal/scrapers/local_cinema"
@@ -20,6 +21,7 @@ import (
 func main() {
 	// Initialize scraper registry
 	registry := scrapers.NewRegistry()
+	registry.Register(cinemagic_theater.NewScraper())
 	registry.Register(clinton_street_theater.NewScraper())
 	registry.Register(example_theater.NewScraper())
 	registry.Register(local_cinema.NewScraper())

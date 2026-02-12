@@ -30,6 +30,7 @@ type Movie struct {
 	Popularity    float64  `json:"popularity"`
 	Cast          []string `json:"cast"`
 	Director      string   `json:"director"`
+	LimitedInfo   bool     `json:"limited_info"` // Flag for TMDB match failure
 }
 
 // Showtime represents a movie showtime
